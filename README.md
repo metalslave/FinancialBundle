@@ -59,3 +59,20 @@ doctrine:
             CategoryType: Metalslave\FinancialBundle\DBAL\Types\CategoryType
             money: Tbbc\MoneyBundle\Type\MoneyType
 ```
+
+### Add options to routing.yml
+
+```php
+metalslave_financial:
+    resource: "@MetalslaveFinancialBundle/Resources/config/routing.yml"
+    prefix:   /
+```
+
+### Usage
+```php
+account_currency/ - creat currencies 
+tag/ - create tag
+bank_account/ - create bank account
+transaction_category/ - create transaction category
+transaction/ - create transaction
+```

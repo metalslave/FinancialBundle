@@ -1,0 +1,45 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>Transactions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Comment</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td><a href="{{ path('transaction_show', { 'id': transaction.id }) }}">{{ transaction.id }}</a></td>
+                <td>{{ transaction.amount | money_format }}</td>
+                <td>{{ transaction.comment }}</td>
+                <td>{% if transaction.createdAt %}{{ transaction.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if transaction.updatedAt %}{{ transaction.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('transaction_show', { 'id': transaction.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('transaction_edit', { 'id': transaction.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('transaction_new') }}">Create a new transaction</a>
+        </li>
+    </ul>
+{% endblock %}

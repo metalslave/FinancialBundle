@@ -1,0 +1,45 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>Bankaccounts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bankAccount in bankAccounts %}
+            <tr>
+                <td><a href="{{ path('bank_account_show', { 'id': bankAccount.id }) }}">{{ bankAccount.id }}</a></td>
+                <td>{{ bankAccount.name }}</td>
+                <td>{{ bankAccount.amount | money_format }}</td>
+                <td>{% if bankAccount.createdAt %}{{ bankAccount.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if bankAccount.updatedAt %}{{ bankAccount.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bank_account_show', { 'id': bankAccount.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bank_account_edit', { 'id': bankAccount.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bank_account_new') }}">Create a new bankAccount</a>
+        </li>
+    </ul>
+{% endblock %}

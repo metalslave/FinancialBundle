@@ -1,0 +1,44 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>Transaction</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ transaction.id }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ transaction.amount | money_format }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ transaction.comment }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if transaction.createdAt %}{{ transaction.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if transaction.updatedAt %}{{ transaction.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('transaction_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('transaction_edit', { 'id': transaction.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

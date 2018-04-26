@@ -28,6 +28,7 @@ class AccountCurrency
      * @ORM\Column(type="string", length=10, nullable=false)
      *
      * @Assert\NotBlank()
+     * @Assert\Currency()
      */
     protected $shortName;
 
@@ -86,5 +87,17 @@ class AccountCurrency
         $this->shortName = $shortName;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        if ($this->id) {
+            return $this->name.' '.$this->shortName;
+        }
+
+        return 'null';
     }
 }

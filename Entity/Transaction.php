@@ -137,7 +137,7 @@ class Transaction
      */
     public function getAmount()
     {
-        if (!$this->bankAccount->getCurrency()) {
+        if (!$this->bankAccount || !$this->bankAccount->getCurrency()) {
             return null;
         }
         $currencyName = $this->getCurrencyName();
@@ -161,13 +161,13 @@ class Transaction
     }
 
     /**
-     * @param Money $amount
+     * @param int $amount
      *
      * @return $this
      */
-    public function setAmount(Money $amount)
+    public function setAmount($amount)
     {
-        $this->amount = $amount->getAmount();
+        $this->amount = $amount;
 
         return $this;
     }

@@ -49,7 +49,7 @@ class BankAccount
      *
      * @ORM\Column(type="integer")
      */
-    protected $amount;
+    protected $amount = 0;
 
     /**
      * @return int
@@ -128,30 +128,26 @@ class BankAccount
     }
 
     /**
-     * @param Money $amount
+     * @param int $amount
      *
      * @return $this
      */
-    public function setAmount(Money $amount)
+    public function setAmount($amount)
     {
-        $this->amount = $amount->getAmount();
+        $this->amount = $amount;
 
         return $this;
     }
 
     /**
-     * @param int|float $amount
-     *
-     * @return $this
-     *
-     * @throws \Money\UnknownCurrencyException
+     * @return string
      */
-    public function setAmountNumber($amount)
+    public function __toString()
     {
-        $money = new Money($amount, new Currency($this->currency->getShortName()));
+        if ($this->id) {
+            return $this->name;
+        }
 
-        $this->setAmount($money);
-
-        return $this;
+        return '';
     }
 }

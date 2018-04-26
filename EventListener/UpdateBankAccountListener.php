@@ -45,7 +45,7 @@ class UpdateBankAccountListener
 
             $currentAmount = $bankAccount->getAmount()->getAmount();
             $currentAmount += $amount;
-            $bankAccount->setAmountNumber($currentAmount);
+            $bankAccount->setAmount($currentAmount);
 
             $this->em->flush($bankAccount);
         }

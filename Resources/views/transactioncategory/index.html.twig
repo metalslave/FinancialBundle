@@ -1,0 +1,45 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>Transactioncategories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Categorytype</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transactionCategory in transactionCategories %}
+            <tr>
+                <td><a href="{{ path('transaction_category_show', { 'id': transactionCategory.id }) }}">{{ transactionCategory.id }}</a></td>
+                <td>{{ transactionCategory.name }}</td>
+                <td>{{ transactionCategory.categoryType }}</td>
+                <td>{% if transactionCategory.createdAt %}{{ transactionCategory.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if transactionCategory.updatedAt %}{{ transactionCategory.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('transaction_category_show', { 'id': transactionCategory.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('transaction_category_edit', { 'id': transactionCategory.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('transaction_category_new') }}">Create a new transactionCategory</a>
+        </li>
+    </ul>
+{% endblock %}

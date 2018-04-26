@@ -1,0 +1,41 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>Accountcurrencies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Shortname</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for accountCurrency in accountCurrencies %}
+            <tr>
+                <td><a href="{{ path('account_currency_show', { 'id': accountCurrency.id }) }}">{{ accountCurrency.id }}</a></td>
+                <td>{{ accountCurrency.shortName }}</td>
+                <td>{{ accountCurrency.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('account_currency_show', { 'id': accountCurrency.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('account_currency_edit', { 'id': accountCurrency.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('account_currency_new') }}">Create a new accountCurrency</a>
+        </li>
+    </ul>
+{% endblock %}

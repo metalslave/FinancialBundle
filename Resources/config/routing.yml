@@ -1,3 +1,19 @@
-andrew_tom_met_financial_homepage:
-    path:     /
-    defaults: { _controller: MetalslaveFinancialBundle:Default:index }
+metalslave_financial_transaction:
+    resource: "@MetalslaveFinancialBundle/Controller/TransactionController.php"
+    type:     annotation
+
+metalslave_financial_tag:
+    resource: "@MetalslaveFinancialBundle/Controller/TagController.php"
+    type:     annotation
+
+metalslave_financial_account_currency:
+    resource: "@MetalslaveFinancialBundle/Controller/AccountCurrencyController.php"
+    type:     annotation
+
+metalslave_financial_bank_account:
+    resource: "@MetalslaveFinancialBundle/Controller/BankAccountController.php"
+    type:     annotation
+
+metalslave_financial_transaction_category:
+    resource: "@MetalslaveFinancialBundle/Controller/TransactionCategoryController.php"
+    type:     annotation
