@@ -5,6 +5,7 @@ namespace Metalslave\FinancialBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Tbbc\MoneyBundle\Form\Type\MoneyType;
 
 class TransactionType extends AbstractType
 {
@@ -14,7 +15,7 @@ class TransactionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('amount')
+            ->add('amount', MoneyType::class)
             ->add('comment')
             ->add('category')
             ->add('bankAccount')

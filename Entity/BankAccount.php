@@ -128,11 +128,23 @@ class BankAccount
     }
 
     /**
+     * @param Money $amount
+     *
+     * @return $this
+     */
+    public function setAmount(Money $amount)
+    {
+        $this->amount = $amount->getAmount();
+
+        return $this;
+    }
+
+    /**
      * @param int $amount
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setAmountInt($amount)
     {
         $this->amount = $amount;
 

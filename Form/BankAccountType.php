@@ -5,6 +5,7 @@ namespace Metalslave\FinancialBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Tbbc\MoneyBundle\Form\Type\MoneyType;
 
 class BankAccountType extends AbstractType
 {
@@ -15,7 +16,7 @@ class BankAccountType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('amount')
+            ->add('amount', MoneyType::class)
             ->add('currency');
     }/**
      * {@inheritdoc}

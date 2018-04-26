@@ -58,6 +58,9 @@ doctrine:
         types:
             CategoryType: Metalslave\FinancialBundle\DBAL\Types\CategoryType
             money: Tbbc\MoneyBundle\Type\MoneyType
+twig:
+    form_themes:
+        - 'TbbcMoneyBundle:Form:fields.html.twig'            
 ```
 
 ### Add options to routing.yml
