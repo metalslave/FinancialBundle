@@ -1,0 +1,3 @@
+andrew_tom_met_financial_homepage:
+    path:     /
+    defaults: { _controller: MetalslaveFinancialBundle:Default:index }

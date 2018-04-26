@@ -1,0 +1,10 @@
+services:
+    financial.transaction.entity.listner:
+        class: Metalslave\FinancialBundle\EntityListener\TransactionEntityListener
+        arguments: ['@event_dispatcher']
+        tags: [{ name: doctrine.orm.entity_listener}]
+
+    financial.bank_account_update.listener:
+        class: Metalslave\FinancialBundle\EventListener\UpdateBankAccountListener
+        arguments: ['@doctrine.orm.entity_manager']
+        tags: [{name: kernel.event_listener, event: 'event.update_bank_account_amount', method: onUpdateAccountAmount}]

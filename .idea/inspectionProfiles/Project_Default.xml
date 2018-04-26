@@ -1,0 +1,9 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="CODING_STANDARD" value="Symfony" />
+      <option name="CUSTOM_RULESET_PATH" value="/opt/Symfony2-coding-standards/Symfony2/ruleset.xml" />
+    </inspection_tool>
+  </profile>
+</component>

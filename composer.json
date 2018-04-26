@@ -1,0 +1,33 @@
+{
+    "name": "metalslave/financialBundle",
+    "description": "financial bundle",
+    "version" : "0.0.1",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors" : [{
+        "name" : "Andrij Tomchyshyn",
+        "email" : "andrij.tomchyshyn@stfalcon.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Metalslave\\FinancialBundle\\": ""
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "doctrine/orm": "^2.5",
+        "fresh/doctrine-enum-bundle": "^4.8",
+        "stof/doctrine-extensions-bundle": "^1.3",
+        "symfony/polyfill-apcu": "^1.0",
+        "symfony/symfony": "~3.*",
+        "tbbc/money-bundle": "^3.1",
+        "twig/twig": "^1.0||^2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.1-dev"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+tbbc_money:
+    currencies: ["USD", "EUR", "UAH", "RUB"]
+    reference_currency: "UAH"
+    decimals: 2
+    ratio_provider: tbbc_money.ratio_provider.google
+    #storage: doctrine #ratio storage
+    enable_pair_history: false
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true
+doctrine:
+    dbal:
+        types:
+            CategoryType: Metalslave\FinancialBundle\DBAL\Types\CategoryType
+            money: Tbbc\MoneyBundle\Type\MoneyType
+twig:
+    form:
+        resources:
+            - 'TbbcMoneyBundle:Form:fields.html.twig'
