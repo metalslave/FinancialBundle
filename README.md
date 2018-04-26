@@ -70,6 +70,8 @@ metalslave_financial:
 
 ### Usage
 ```php
+financial/ - list of links
+
 account_currency/ - creat currencies 
 tag/ - create tag
 bank_account/ - create bank account

@@ -1,0 +1,22 @@
+{% extends '@MetalslaveFinancial/base.html.twig' %}
+
+{% block body %}
+    <h1>financial</h1>
+    <ul>
+        <li>
+            <a href="{{ path('tag_index') }}">tag list</a>
+        </li>
+        <li>
+            <a href="{{ path('account_currency_index') }}">currencies list</a>
+        </li>
+        <li>
+            <a href="{{ path('transaction_category_index') }}">transaction categories list</a>
+        </li>
+        <li>
+            <a href="{{ path('bank_account_index') }}">bank accounts list</a>
+        </li>
+        <li>
+            <a href="{{ path('transaction_index') }}">transactions list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,3 +1,7 @@
+metalslave_financial_default:
+    resource: "@MetalslaveFinancialBundle/Controller/DefaultController.php"
+    type:     annotation
+
 metalslave_financial_transaction:
     resource: "@MetalslaveFinancialBundle/Controller/TransactionController.php"
     type:     annotation
