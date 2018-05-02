@@ -71,6 +71,18 @@ metalslave_financial:
     prefix:   /
 ```
 
+### Update db schema
+
+```php
+bin/console doctrine:schema:update --force
+```
+or
+```php
+bin/console do:mi:di
+bin/console do:mi:mi
+```
+if using migration bundle.
+
 ### Usage
 ```php
 financial/ - list of links
