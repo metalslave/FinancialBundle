@@ -18,7 +18,7 @@
 ```
 ### Add dependency via Composer
 
-```php composer.phar require metalslave/FinancialBundle```
+```php composer.phar require metalslave/financialbundle```
 
 ### Register the bundles
 
